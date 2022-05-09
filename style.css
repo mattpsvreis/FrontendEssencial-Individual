@@ -429,6 +429,8 @@ a.anchor {
     color: var(--txthover);
 }
 
+/* RESPONSIVE */
+
 @media (min-width: 768px) {
     .container-home {
         padding-top: 40px;

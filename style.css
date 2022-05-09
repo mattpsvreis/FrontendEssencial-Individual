@@ -435,6 +435,10 @@ a.anchor {
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
+    .bg-container-home {
+        background-position-y: -500px;
+    }
+    
     .container-home {
         padding-top: 40px;
         text-align: center;
@@ -466,6 +470,10 @@ a.anchor {
 
     .navbar a:hover {
         font-size: 20px;
+    }
+
+    .bg-container-home {
+        background-position-y: -800px;
     }
 
     .about-title {

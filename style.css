@@ -202,8 +202,11 @@ a.anchor {
 }
 
 .card:hover {
-    width: 280px;
-    height: 359px;
+    -webkit-transform: scale(110%);
+    -moz-transform: scale(110%);
+    -o-transform: scale(110%);
+    -ms-transform: scale(110%);
+    transform: scale(110%);
 }
 
 .card p {

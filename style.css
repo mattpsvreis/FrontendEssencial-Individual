@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: aliceblue;
+    list-style: none;
 }
 
 :root {
@@ -53,7 +54,6 @@ a.anchor {
     align-items: center;
     position: fixed;
     z-index: 50;
-    padding-inline: 20px;
     width: 100%;
     height: 60px;
     background-color: var(--bgnav);
@@ -76,14 +76,76 @@ a.anchor {
     justify-content: left;
     align-items: center;
     height: 100%;
+    padding-left: 20px;
 }
 
-.nav-title ul {
+.nav-title img {
+    width: 60px;
+}
+
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 3px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.nav-menu {
+    background-color: var(--bgnav);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease-out;
+    z-index: -1;
+}
+
+.nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     list-style: none;
+    margin-bottom: 60px;
+    gap: 50px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+}
+
+.nav-menu.active {
+    top: 100%;
+    transition: all 0.5s ease-out;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
 }
 
 .nav-options {
-    display: flex;
+    display: none;
     justify-content: right;
     align-items: center;
     height: 100%;
@@ -466,6 +528,26 @@ a.anchor {
 }
 
 @media screen and (min-width: 1024px) {
+    .navbar {
+        padding-inline: 20px;
+    }
+
+    .nav-title {
+        padding-left: 0px;
+    }
+    
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-options {
+        display: flex;
+    }
+    
     .navbar li, .nav-title li {
         font-size: 18px;
     }
